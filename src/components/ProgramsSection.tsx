@@ -3,36 +3,50 @@ import { useEffect, useState } from 'react'
 const programs = [
   {
     code: 'P1',
-    title: 'Peak Performance Labs',
-    duration: '2-day intensive',
-    cohort: 'Max 20 seats',
+    title: 'Become the Best of You',
+    duration: 'Signature Program',
+    cohort: 'Working & Non-working',
     details: [
-      'Rapid experimentation frameworks',
-      'Leadership hot-seat and peer review',
-      'Momentum blueprints delivered post-lab',
+      'Overcome the fear of speaking',
+      'Become bold to face your challenges',
+      'Learn to manage yourself and others',
+      'Make your presence visible',
     ],
+    description: 'A signature program of TWC curated specially for working & non-working individuals who are looking to excel in their personal as well as professional lives.',
+    cta: 'Give yourself the gift of growth. Rise above your limitations. Experience a transformation that begins from the inside out.',
   },
   {
     code: 'P2',
-    title: 'Future Leaders Fellowship',
-    duration: '10-week hybrid',
-    cohort: 'Cohort model',
+    title: 'Empower the Young',
+    duration: 'Campus to Corporate',
+    cohort: 'Educational Institutions',
     details: [
-      'Executive mentorship pairings',
-      'Accountability pods & scorecards',
-      'Systems thinking & influence labs',
+      'Crafting Resumes',
+      'Group Discussions',
+      'Interview Etiquette',
+      'And other student topics that can enhance their resume',
     ],
+    description: 'Campus to Corporate Catalyst program for Educational Institutions. Enable them to harness opportunities to use their hard skills by sharpening them with life skills.',
+    cta: 'Contact us to know more!!',
   },
   {
     code: 'P3',
-    title: 'Executive Storycraft',
-    duration: '4-week sprint',
-    cohort: 'CXO circles',
+    title: 'Equip Workforce',
+    duration: '9 Impactful Modules',
+    cohort: 'Corporate Training',
     details: [
-      'Narrative architecture sessions',
-      'High-stakes presentation coaching',
-      'Signature story asset delivered',
+      'Team Building',
+      'Goal Setting',
+      'Time Management',
+      'Communication Skills',
+      'General & Business Etiquette',
+      'Interpersonal Skills',
+      'Emotional Intelligence',
+      'Customer First',
+      'Stress Management',
     ],
+    description: '9 Impactful Corporate Training Modules for retreats and performance improvement. Grow through fun learning.',
+    cta: "Learn through fun activities and interactive sessions. Inbound and Outbound we've got you covered.",
   },
 ]
 
@@ -63,10 +77,6 @@ const ProgramsSection = () => {
           <h2 className="text-2xl leading-snug sm:text-3xl md:text-4xl">
             Purpose-built experiences for every growth stage.
           </h2>
-          <p className="text-white/70">
-            Each pathway blends research-backed frameworks, real-time coaching, and immersive accountability to sustain
-            long-term change.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -100,29 +110,28 @@ const ProgramsSection = () => {
                 <div className="absolute inset-0 flex flex-col gap-4 rounded-[22px] border border-[#f4d35e66] bg-[linear-gradient(135deg,rgba(8,24,51,0.95),rgba(5,18,44,0.9))] p-6 text-white shadow-[0_15px_35px_rgba(0,0,0,0.35)] [backface-visibility:hidden]">
                   <div className="flex items-center justify-between text-sm uppercase tracking-[0.08em] text-white/70">
                     <span className="text-3xl font-bold tracking-tight text-[#f4d35e]">{program.code}</span>
-                    <p>{program.duration}</p>
+                    <p className="text-xs">{program.duration}</p>
                   </div>
-                  <h3 className="text-xl">{program.title}</h3>
+                  <h3 className="text-xl font-semibold">{program.title}</h3>
+                  <p className="text-sm text-white/80 leading-relaxed">{program.description}</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="rounded-full border border-white/40 px-3 py-1 text-[0.7rem] uppercase tracking-[0.15em] text-white/70">
                       {program.cohort}
                     </span>
-                    <span className="rounded-full border border-white/40 px-3 py-1 text-[0.7rem] uppercase tracking-[0.15em] text-white/70">
-                      Live coaching
-                    </span>
                   </div>
-                  <p className="mt-auto text-xs uppercase tracking-[0.2em] text-white/60">Flip to explore deliverables</p>
+                  <p className="mt-auto text-xs uppercase tracking-[0.2em] text-white/60">Flip to explore details</p>
                 </div>
                 <div className="absolute inset-0 flex flex-col rounded-[22px] bg-[linear-gradient(135deg,#f4d35e,#f7e19b)] p-6 text-[#0b1a34] shadow-[0_20px_35px_rgba(0,0,0,0.25)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em]">What you receive:</p>
-                  <ul className="mt-4 space-y-2 text-sm font-medium">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em]">Program Details:</p>
+                  <ul className="mt-4 space-y-2 text-sm font-medium flex-1 overflow-y-auto">
                     {program.details.map((detail) => (
                       <li key={detail} className="flex items-start gap-2">
-                        <span className="mt-1 h-2 w-2 rounded-full bg-[#0b1a34]" />
-                        {detail}
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0b1a34] flex-shrink-0" />
+                        <span>{detail}</span>
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-4 text-xs font-semibold text-[#0b1a34]/90">{program.cta}</p>
                 </div>
               </div>
             </div>

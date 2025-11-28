@@ -17,8 +17,8 @@ const HeroSection = () => {
         <p className="text-xs uppercase tracking-[0.5em] text-[#f4d35e] sm:text-sm">The Winning Clan</p>
         <h1 className="text-3xl leading-tight sm:text-4xl md:text-5xl">Equipping Individuals to Excel</h1>
         <p className="max-w-[540px] text-base text-white/80">
-          We architect transformational experiences for teams and leaders who crave momentum. Strategy,
-          storytelling, and coaching converge to build cultures that win with purpose.
+          A space for individuals, institutions, and organizations committed to upskilling themselves and their people. 
+          We believe life skills are essential for every individual—communication, empathy, leadership, adaptability—that make us truly stand out.
         </p>
         <div className="flex flex-wrap gap-3 sm:gap-4">
           <Link
