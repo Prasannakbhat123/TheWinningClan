@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(18,41,79,0.9),_#081833)] text-[#f5f6fb]">
       <Header />
-      <main className="mx-auto w-full max-w-[1200px] px-6 pb-24 pt-6 md:px-10">
+      <main className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-4 sm:px-6 md:px-10">
         <HeroSection />
         <AboutSection />
         <ProgramsSection />
