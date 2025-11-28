@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-scroll'
 import logo from '../assets/twc-logo.svg'
 
 const navItems = [
@@ -12,6 +11,7 @@ const navItems = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
@@ -19,6 +19,79 @@ const Header = () => {
       document.body.style.overflow = ''
     }
   }, [isOpen])
+
+  // Scroll spy to detect active section
+  useEffect(() => {
+    const sections = navItems.map((item) => document.getElementById(item.to)).filter(Boolean) as HTMLElement[]
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 120 // Offset for header + some padding
+      
+      // Find which section is currently in view
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i]
+        if (section) {
+          const sectionTop = section.offsetTop
+          const sectionHeight = section.offsetHeight
+          
+          // Check if scroll position is within this section
+          if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+            setActiveSection(section.id)
+            return
+          }
+        }
+      }
+      
+      // If scrolled to top, set hero as active
+      if (window.scrollY < 100) {
+        setActiveSection('hero')
+      }
+    }
+
+    // Throttle scroll events for better performance
+    let ticking = false
+    const throttledScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
+    handleScroll() // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', throttledScroll)
+    }
+  }, [])
+
+  const handleNavClick = (sectionId: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      // Update active section immediately for instant feedback
+      setActiveSection(sectionId)
+      
+      // Start scrolling immediately with native smooth scroll
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+    
+    // Close mobile menu if open
+    if (isOpen) {
+      setIsOpen(false)
+    }
+  }
 
   const handleLinkClick = () => setIsOpen(false)
 
@@ -31,23 +104,23 @@ const Header = () => {
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <img src={logo} alt="The Winning Clan emblem" className="h-11 w-11 sm:h-12 sm:w-12" />
-            <span className="text-base font-semibold tracking-[0.35em] text-[#f4d35e] sm:text-lg">TWC</span>
+            <span className="logo-font text-base tracking-normal text-[#f4d35e] sm:text-lg font-bold">TWC</span>
           </div>
 
           <nav className="hidden items-center gap-3 text-[0.75rem] md:flex">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.to}
-                to={item.to}
-                smooth="easeInOutQuart"
-                offset={-80}
-                duration={600}
-                className="cursor-pointer rounded-full border border-transparent px-4 py-2 font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:border-[#f4d35e] hover:text-[#f4d35e]"
-                activeClass="border-[#f4d35e] text-[#f4d35e]"
-                spy
+                href={`#${item.to}`}
+                onClick={(e) => handleNavClick(item.to, e)}
+                className={`cursor-pointer rounded-full border px-4 py-2 font-semibold uppercase tracking-[0.25em] transition hover:border-[#f4d35e] hover:text-[#f4d35e] font-serif ${
+                  activeSection === item.to
+                    ? 'border-[#f4d35e] text-[#f4d35e]'
+                    : 'border-transparent text-white/80'
+                }`}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -109,19 +182,21 @@ const Header = () => {
 
         <div className="flex flex-1 flex-col gap-4 overflow-y-auto pb-6">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.to}
-              to={item.to}
-              smooth="easeInOutQuart"
-              offset={-80}
-              duration={600}
-              className="rounded-full border border-white/10 px-6 py-3 text-center font-semibold tracking-[0.3em] text-white/80 transition hover:border-[#f4d35e] hover:text-[#f4d35e]"
-              activeClass="border-[#f4d35e] text-[#f4d35e]"
-              spy
-              onClick={handleLinkClick}
+              href={`#${item.to}`}
+              onClick={(e) => {
+                handleNavClick(item.to, e)
+                handleLinkClick()
+              }}
+              className={`rounded-full border px-6 py-3 text-center font-semibold tracking-[0.3em] transition hover:border-[#f4d35e] hover:text-[#f4d35e] font-serif ${
+                activeSection === item.to
+                  ? 'border-[#f4d35e] text-[#f4d35e]'
+                  : 'border-white/10 text-white/80'
+              }`}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
       </nav>
