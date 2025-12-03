@@ -11,24 +11,12 @@ const AboutSection = () => {
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#081833] opacity-[0.025] rounded-full blur-3xl" />
 
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10">
-        <div className="mb-12" data-aos="fade-up">
+        <div className="mb-12 text-center" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#8b7355] font-bold mb-8">About Us</h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="order-1 flex flex-col items-center gap-4 md:order-2" data-aos="fade-left">
-            {/* Image placeholder - will be replaced with actual image */}
-            <div className="flex w-full min-h-[220px] items-center justify-center rounded-[26px] border-2 border-[#081833]/20 bg-white/50 backdrop-blur-sm shadow-lg sm:min-h-[300px] overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80" 
-                alt="Team collaboration and learning" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="text-sm text-[#5a4a3a]">Visual narratives from recent transformation sprints.</p>
-          </div>
-
-          <div className="order-2 space-y-6 md:order-1" data-aos="fade-right">
+        <div className="grid gap-8">
+          <div className="space-y-6" data-aos="fade-right">
             <div className="rounded-3xl border border-[#081833]/30 bg-[linear-gradient(135deg,rgba(8,24,51,0.95),rgba(4,11,26,0.95))] p-6 text-white/90 shadow-[0_20px_45px_rgba(0,0,0,0.35)] sm:p-8 space-y-4">
               <h3 className="text-lg sm:text-xl text-white/95 font-medium mb-4 leading-relaxed">
                 Winning Clan is a space for individuals, institutions, and organizations committed to upskilling themselves and their people.

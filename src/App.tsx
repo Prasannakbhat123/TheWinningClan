@@ -27,9 +27,7 @@ function App() {
           <ProgramsSection />
         </div>
         <TestimonialsSection />
-        <div className="mx-auto w-full max-w-[1200px] px-4 pt-4 sm:px-6 md:px-10 bg-[radial-gradient(circle_at_top,_rgba(18,41,79,0.9),_#081833)]">
-          <ContactSection />
-        </div>
+        <ContactSection />
       </main>
     </div>
   )

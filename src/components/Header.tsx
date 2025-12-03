@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logo from '../assets/twc-logo.svg'
+import logo from '../assets/twc-logo.png'
 
 const navItems = [
   { label: 'Home', to: 'hero' },

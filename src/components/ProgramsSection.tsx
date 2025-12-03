@@ -89,7 +89,7 @@ const ProgramsSection = () => {
               style={{ perspective: '1200px' }}
             >
               <div
-                className={`relative w-full pt-[130%] transition duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
+                className={`relative w-full h-[500px] transition duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
                   isTouch && flippedIndex === index ? '[transform:rotateY(180deg)]' : ''
                 }`}
                 role={isTouch ? 'button' : undefined}
@@ -113,34 +113,32 @@ const ProgramsSection = () => {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#081833] opacity-[0.02] rounded-full blur-2xl" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#081833] opacity-[0.02] rounded-full blur-2xl" />
                   
-                  <div className="relative z-10 flex flex-col gap-4 h-full">
+                  <div className="relative z-10 flex flex-col gap-4 h-full min-h-0">
                     <div className="flex items-center justify-between text-sm uppercase tracking-[0.08em] text-[#081833]/60">
                       <span className="text-3xl font-bold tracking-tight text-[#8b7355]">{program.code}</span>
                       <p className="text-xs text-[#081833]/70">{program.duration}</p>
-                    </div>
+                  </div>
                     <h3 className="text-xl font-semibold text-[#081833]">{program.title}</h3>
                     <p className="text-sm text-[#081833]/80 leading-relaxed">{program.frontDescription}</p>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
                       <span className="rounded-full border border-[#081833]/30 px-3 py-1 text-[0.7rem] uppercase tracking-[0.15em] text-[#081833]/70 bg-[#081833]/5">
-                        {program.cohort}
-                      </span>
+                      {program.cohort}
+                    </span>
                     </div>
                     <p className="mt-auto text-xs uppercase tracking-[0.2em] text-[#081833]/50">Flip to explore details</p>
                   </div>
                 </div>
                 <div className="absolute inset-0 flex flex-col rounded-[22px] bg-[linear-gradient(135deg,#f4d35e,#f7e19b)] p-6 text-[#0b1a34] shadow-[0_20px_35px_rgba(0,0,0,0.25)] [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
-                  {/* Subtle pattern overlay */}
-                  <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(11,26,52,0.1),transparent_50%)]" />
-                  </div>
+                  {/* Elegant pattern overlay */}
+                  <div className="absolute inset-0 card-back-pattern pointer-events-none" />
                   
-                  <div className="relative z-10 flex flex-col h-full">
+                  <div className="relative z-10 flex flex-col h-full min-h-0">
                     <div className="mb-3">
                       <h4 className="text-lg font-bold mb-1">{program.title}</h4>
                       <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0b1a34]/70">Program Details</p>
                     </div>
                     <ul className="mt-1 space-y-2 text-sm font-medium flex-1">
-                      {program.details.map((detail) => (
+                    {program.details.map((detail) => (
                         <li key={detail} className="flex items-start gap-3 group/item">
                           <div className="flex-shrink-0 mt-1.5 relative">
                             <span className="absolute inset-0 bg-[#0b1a34]/20 rounded-full blur-sm group-hover/item:bg-[#0b1a34]/30 transition-all" />
@@ -149,9 +147,9 @@ const ProgramsSection = () => {
                             </span>
                           </div>
                           <span className="leading-tight group-hover/item:font-semibold group-hover/item:text-[#0b1a34] transition-all text-[#0b1a34]/90">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      </li>
+                    ))}
+                  </ul>
                     <div className="mt-3 pt-3 border-t border-[#0b1a34]/30">
                       <p className="text-xs font-semibold text-[#0b1a34] leading-relaxed">{program.cta}</p>
                     </div>
