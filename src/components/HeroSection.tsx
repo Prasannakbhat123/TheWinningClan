@@ -49,8 +49,8 @@ const HeroSection = () => {
           </h2>
           
           {/* Description */}
-          <p className="max-w-2xl text-base sm:text-lg text-[#5a4a3a] leading-snug mt-1">
-            A space for individuals, institutions, and organizations committed to upskilling themselves and their people.
+          <p className="max-w-3xl text-lg sm:text-2xl text-[#5a4a3a] leading-snug mt-1">
+          Your preferred place to upskill people and empower teams.
           </p>
           
           {/* Buttons - Blue */}
@@ -58,14 +58,14 @@ const HeroSection = () => {
             <a
               href="#programs"
               onClick={(e) => handleScrollClick('programs', e)}
-              className="rounded-full bg-[#081833] px-8 py-4 text-sm font-semibold uppercase tracking-normal text-white shadow-lg hover:shadow-xl hover:bg-[#0a1f3f] transition-all duration-300 hover:-translate-y-1 sm:px-10 sm:py-4 sm:text-base font-serif"
+              className="rounded-full bg-[#081833] px-8 py-4 text-sm font-bold uppercase tracking-normal text-white shadow-lg hover:shadow-xl hover:bg-[#0a1f3f] transition-all duration-300 hover:-translate-y-1 sm:px-10 sm:py-4 sm:text-base"
             >
               View Programs
             </a>
             <a
               href="#contact"
               onClick={(e) => handleScrollClick('contact', e)}
-              className="rounded-full border-2 border-[#081833] px-8 py-4 text-sm font-semibold uppercase tracking-normal text-[#081833] hover:bg-[#081833] hover:text-white transition-all duration-300 hover:-translate-y-1 sm:px-10 sm:py-4 sm:text-base font-serif"
+              className="rounded-full border-2 border-[#081833] px-8 py-4 text-sm uppercase tracking-normal text-[#081833] hover:bg-[#081833] hover:text-white transition-all duration-300 hover:-translate-y-1 sm:px-10 sm:py-4 font-bold sm:text-base"
             >
               Talk to us
             </a>

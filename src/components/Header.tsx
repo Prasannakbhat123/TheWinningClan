@@ -102,9 +102,9 @@ const Header = () => {
         id="home"
       >
         <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="The Winning Clan emblem" className="h-11 w-11 sm:h-12 sm:w-12" />
-            <span className="logo-font text-base tracking-normal text-[#f4d35e] sm:text-lg font-bold">TWC</span>
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="The Winning Clan emblem" className="h-9 w-9 sm:h-10 sm:w-10" />
+            <span className="logo-font text-xl tracking-normal text-[#f4d35e] sm:text-2xl font-bold">TWC</span>
           </div>
 
           <nav className="hidden items-center gap-3 text-[0.75rem] md:flex">
@@ -189,7 +189,7 @@ const Header = () => {
                 handleNavClick(item.to, e)
                 handleLinkClick()
               }}
-              className={`rounded-full border px-6 py-3 text-center font-semibold tracking-[0.3em] transition hover:border-[#f4d35e] hover:text-[#f4d35e] font-serif ${
+              className={`rounded-full border px-6 py-3 text-center text-base font-semibold tracking-normal transition hover:border-[#f4d35e] hover:text-[#f4d35e] ${
                 activeSection === item.to
                   ? 'border-[#f4d35e] text-[#f4d35e]'
                   : 'border-white/10 text-white/80'

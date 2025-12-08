@@ -14,7 +14,7 @@ const ContactSection = () => {
         <div className="rounded-[32px] border border-[#f4d35e59] bg-[linear-gradient(135deg,rgba(5,16,36,0.9),rgba(16,52,96,0.8))] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] md:p-12">
           <div className="mx-auto max-w-2xl space-y-3" data-aos="fade-up">
             <p className="text-sm uppercase tracking-normal text-[#f4d35e]">Contact us :</p>
-            <h2 className="text-3xl leading-snug md:text-4xl">Be a part of 'The Winning Clan' now!!</h2>
+            <h2 className="text-3xl leading-snug md:text-4xl">Liked what we do ? Then be a part of The Winning Clan now !!</h2>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -31,7 +31,7 @@ const ContactSection = () => {
               data-aos-delay="120"
             >
               <p className="text-xs uppercase tracking-normal text-white/60">Phone Number</p>
-              <p className="mt-3 text-2xl font-semibold text-[#f4d35e]">Contact us for details</p>
+              <p className="mt-3 text-2xl font-semibold text-[#f4d35e]">8310448805</p>
             </div>
           </div>
         </div>

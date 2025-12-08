@@ -86,12 +86,19 @@ const ProgramsSection = () => {
               key={program.code}
               data-aos="zoom-in"
               data-aos-delay={index * 120}
-              style={{ perspective: '1200px' }}
+              style={{ 
+                perspective: '1200px',
+                WebkitPerspective: '1200px',
+              }}
             >
               <div
-                className={`relative w-full h-[500px] transition duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
-                  isTouch && flippedIndex === index ? '[transform:rotateY(180deg)]' : ''
+                className={`card-container relative w-full h-[500px] transition-transform duration-700 will-change-transform ${
+                  isTouch && flippedIndex === index ? 'flipped' : ''
                 }`}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  WebkitTransformStyle: 'preserve-3d',
+                }}
                 role={isTouch ? 'button' : undefined}
                 tabIndex={isTouch ? 0 : undefined}
                 aria-pressed={isTouch ? flippedIndex === index : undefined}
@@ -107,7 +114,19 @@ const ProgramsSection = () => {
                     : undefined
                 }
               >
-                <div className="absolute inset-0 flex flex-col gap-4 rounded-[22px] border border-[#081833]/20 bg-[#fefbf3] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.1)] [backface-visibility:hidden] overflow-hidden">
+                <div 
+                  className="card-front absolute inset-0 flex flex-col gap-4 rounded-[22px] border border-[#081833]/20 bg-[#fefbf3] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.1)] overflow-hidden"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'rotateY(0deg) translate3d(0, 0, 0)',
+                    WebkitTransform: 'rotateY(0deg) translate3d(0, 0, 0)',
+                    transformStyle: 'preserve-3d',
+                    WebkitTransformStyle: 'preserve-3d',
+                    transformOrigin: 'center center',
+                    WebkitTransformOrigin: 'center center',
+                  }}
+                >
                   {/* Subtle texture overlay */}
                   <div className="absolute inset-0 card-texture pointer-events-none" />
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#081833] opacity-[0.02] rounded-full blur-2xl" />
@@ -128,7 +147,19 @@ const ProgramsSection = () => {
                     <p className="mt-auto text-sm uppercase tracking-[0.2em] text-[#081833]/50">Flip to explore details</p>
                   </div>
                 </div>
-                <div className="absolute inset-0 flex flex-col rounded-[22px] bg-[linear-gradient(135deg,#f4d35e,#f7e19b)] p-6 text-[#0b1a34] shadow-[0_20px_35px_rgba(0,0,0,0.25)] [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
+                <div 
+                  className="card-back absolute inset-0 flex flex-col rounded-[22px] bg-[linear-gradient(135deg,#f4d35e,#f7e19b)] p-6 text-[#0b1a34] shadow-[0_20px_35px_rgba(0,0,0,0.25)] overflow-hidden"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg) translate3d(0, 0, 0)',
+                    WebkitTransform: 'rotateY(180deg) translate3d(0, 0, 0)',
+                    transformStyle: 'preserve-3d',
+                    WebkitTransformStyle: 'preserve-3d',
+                    transformOrigin: 'center center',
+                    WebkitTransformOrigin: 'center center',
+                  }}
+                >
                   {/* Elegant pattern overlay */}
                   <div className="absolute inset-0 card-back-pattern pointer-events-none" />
                   
@@ -165,4 +196,5 @@ const ProgramsSection = () => {
 }
 
 export default ProgramsSection
+
 

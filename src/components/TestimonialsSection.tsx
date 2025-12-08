@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
         data-aos="fade-up"
       >
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#01091c]/80 py-4 sm:py-5">
-          <div className="flex gap-6 animate-marquee">
+          <div className="flex gap-6 animate-marquee flex-nowrap" style={{ width: 'max-content' }}>
             {[...testimonials, ...testimonials].map((testimonial, index) => {
               // Get the original index (accounting for duplication)
               const originalIndex = index % testimonials.length
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
               
               return (
                 <article
-                  className="min-w-[85vw] max-w-[85vw] rounded-2xl border border-[#f4d35e33] bg-[rgba(11,45,83,0.7)] p-5 shadow-[0_18px_35px_rgba(0,0,0,0.3)] sm:min-w-[320px] sm:max-w-[360px] sm:p-6"
+                  className="flex-shrink-0 min-w-[85vw] max-w-[85vw] rounded-2xl border border-[#f4d35e33] bg-[rgba(11,45,83,0.7)] p-5 shadow-[0_18px_35px_rgba(0,0,0,0.3)] sm:min-w-[320px] sm:max-w-[360px] sm:p-6"
                   key={`${testimonial.quote}-${index}`}
                 >
                   <div className="text-4xl text-[#f4d35e66]">"</div>

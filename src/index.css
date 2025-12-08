@@ -58,11 +58,12 @@
 
   .animate-marquee {
     animation: marquee 28s linear infinite;
+    will-change: transform;
   }
 
   @media (max-width: 640px) {
     .animate-marquee {
-      animation-duration: 16s;
+      animation-duration: 24s;
       gap: 1rem;
     }
   }
@@ -180,5 +181,45 @@
       0% 0%,
       0% 0%, 100% 100%;
     opacity: 0.4;
+  }
+
+  /* Card flip animation - iOS compatible */
+  @media (hover: hover) and (pointer: fine) {
+    .group:hover > .card-container {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+  }
+
+  .flipped {
+    transform: rotateY(180deg) !important;
+    -webkit-transform: rotateY(180deg) !important;
+  }
+
+  /* iOS Safari fixes for 3D transforms */
+  .card-front,
+  .card-back {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Prevent text mirroring on iOS */
+  @supports (-webkit-touch-callout: none) {
+    .card-front,
+    .card-back {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .card-back {
+      -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+      transform: rotateY(180deg) translate3d(0, 0, 0);
+    }
   }
 }
