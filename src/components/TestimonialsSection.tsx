@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "It was really helpful You have done an amazing job in teaching us, resume making, interview appearance, email etiquette, presentation skills, and English communication. The way you kept the sessions interactive and fun made learning very engaging and effective. Your efforts have truly helped us gain confidence in our communication and professional skills. As a small suggestion, it would be really helpful if you could also include a few general interview questions and tips in the sessions. This would prepare us even better to face interviews with confidence. Thank you for your guidance and support.",
+      "It was really helpful You have done an amazing job in teaching us, resume making, interview appearance, email etiquette, presentation skills, and English communication. The way you kept the sessions interactive and fun made learning very engaging and effective. Your efforts have truly helped us gain confidence in our communication and professional skills. Thank you for your guidance and support.",
     name: '',
     role: '',
   },

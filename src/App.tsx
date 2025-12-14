@@ -7,6 +7,7 @@ import AboutSection from './components/AboutSection'
 import ProgramsSection from './components/ProgramsSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import ContactSection from './components/ContactSection'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
         <TestimonialsSection />
         <ContactSection />
       </main>
+      <WhatsAppButton />
     </div>
   )
 }
