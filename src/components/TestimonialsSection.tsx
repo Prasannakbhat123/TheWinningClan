@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const testimonials = [
   {
@@ -29,11 +29,52 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   
   // Calculate max length of all testimonials except the last one
   const maxLength = Math.max(...testimonials.slice(0, -1).map(t => t.quote.length))
   const lastTestimonial = testimonials[testimonials.length - 1]
   const isLastTestimonialLong = lastTestimonial.quote.length > maxLength
+
+  // Handle hover for desktop (pause on hover, resume on leave)
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 640) {
+      setIsPaused(true)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 640) {
+      setIsPaused(false)
+    }
+  }
+
+  // Handle click/tap for mobile (pause for 3 seconds)
+  const handleClick = () => {
+    if (window.innerWidth < 640) {
+      setIsPaused(true)
+      
+      // Clear any existing timeout
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current)
+      }
+      
+      // Resume after 3 seconds
+      pauseTimeoutRef.current = setTimeout(() => {
+        setIsPaused(false)
+      }, 3000)
+    }
+  }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <section id="testimonials" className="relative w-full py-20 overflow-hidden bg-[#fefbf3]">
@@ -54,9 +95,18 @@ const TestimonialsSection = () => {
       <div
           className="mt-12 rounded-[30px] border border-[#f4d35e33] bg-[linear-gradient(135deg,rgba(3,12,30,0.95),rgba(1,9,28,0.95))] p-4 sm:p-8"
         data-aos="fade-up"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#01091c]/80 py-4 sm:py-5">
-          <div className="flex gap-6 animate-marquee flex-nowrap" style={{ width: 'max-content' }}>
+          <div 
+            className="flex gap-6 animate-marquee flex-nowrap" 
+            style={{ 
+              width: 'max-content',
+              animationPlayState: isPaused ? 'paused' : 'running'
+            }}
+          >
             {[...testimonials, ...testimonials].map((testimonial, index) => {
               // Get the original index (accounting for duplication)
               const originalIndex = index % testimonials.length

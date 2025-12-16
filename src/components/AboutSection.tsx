@@ -19,7 +19,7 @@ const AboutSection = () => {
           <div className="space-y-6" data-aos="fade-right">
             <div className="rounded-3xl border border-[#081833]/30 bg-[linear-gradient(135deg,rgba(8,24,51,0.95),rgba(4,11,26,0.95))] p-6 text-white/90 shadow-[0_20px_45px_rgba(0,0,0,0.35)] sm:p-8 space-y-4">
               <h3 className="text-lg sm:text-xl text-white/95 font-medium mb-4 leading-relaxed">
-                Winning Clan is a space for individuals, institutions, and organizations committed to upskilling themselves and their people.
+                Winning Clan is a space for individuals, educational institutions, and corporate organizations committed to upskilling themselves and their people.
               </h3>
               <p>
                 We believe that life skills are essential for every individual. In a world where technology continues to advance, 
@@ -33,9 +33,9 @@ const AboutSection = () => {
                 With this vision, we present TWC Learning & Development, founded with a deep passion for people development. 
                 We empower individuals with the skills they need to enhance career performance, build meaningful life, lead effectively, and grow mindfully.
               </p>
-              <p className="text-[#f4d35e] font-semibold italic">
+              {/* <p className="text-[#f4d35e] font-semibold italic">
                 Because the right skills don't just transform careers—they transform lives.
-              </p>
+              </p> */}
               <p className="text-[#f4d35e] font-semibold">
                 At TWC, better is never enough. We strive for the BEST.
               </p>
