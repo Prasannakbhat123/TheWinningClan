@@ -30,7 +30,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
-  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   
   // Calculate max length of all testimonials except the last one
   const maxLength = Math.max(...testimonials.slice(0, -1).map(t => t.quote.length))
