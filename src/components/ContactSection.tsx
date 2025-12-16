@@ -13,24 +13,28 @@ const ContactSection = () => {
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10">
         <div className="rounded-[32px] border border-[#f4d35e59] bg-[linear-gradient(135deg,rgba(5,16,36,0.9),rgba(16,52,96,0.8))] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] md:p-12">
           <div className="mx-auto max-w-2xl space-y-3" data-aos="fade-up">
-            <p className="text-sm uppercase tracking-normal text-[#f4d35e]">Contact us :</p>
+            <p className="text-lg sm:text-xl font-bold uppercase tracking-normal text-[#f4d35e]">Contact us :</p>
             <h2 className="text-3xl leading-snug md:text-4xl">Liked what we do ? Then be a part of The Winning Clan now !!</h2>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            <div
-              className="rounded-2xl border border-[#f4d35e66] bg-[rgba(7,22,45,0.7)] p-6 text-left"
+            <a
+              href="mailto:thewinningclan11@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-[#f4d35e66] bg-[rgba(7,22,45,0.7)] p-6 text-left hover:bg-[rgba(7,22,45,0.85)] transition-all duration-300 hover:border-[#f4d35e] cursor-pointer"
               data-aos="fade-right"
             >
               <div className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-[#f4d35e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <p className="text-lg font-semibold text-[#f4d35e]">thewinningclan11@gmail.com</p>
+                <p className="text-lg font-semibold text-[#f4d35e]">Email</p>
               </div>
-            </div>
-            <div
-              className="rounded-2xl border border-[#f4d35e66] bg-[rgba(7,22,45,0.7)] p-6 text-left"
+            </a>
+            <a
+              href="tel:+918310448805"
+              className="rounded-2xl border border-[#f4d35e66] bg-[rgba(7,22,45,0.7)] p-6 text-left hover:bg-[rgba(7,22,45,0.85)] transition-all duration-300 hover:border-[#f4d35e] cursor-pointer"
               data-aos="fade-left"
               data-aos-delay="120"
             >
@@ -40,7 +44,7 @@ const ContactSection = () => {
                 </svg>
                 <p className="text-lg font-semibold text-[#f4d35e]">8310448805</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
