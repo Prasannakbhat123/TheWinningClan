@@ -34,7 +34,7 @@ const AboutSection = () => {
                 We empower individuals with the skills they need to enhance career performance, build meaningful life, lead effectively, and grow mindfully.
               </p>
               <p className="text-[#f4d35e] font-semibold italic">
-              The right skills can transform not just careers, but lives. in about us just like before.
+              The right skills can transform not just careers, but lives. 
               </p>
               <p className="text-[#f4d35e] font-semibold">
                 At TWC, better is never enough. We strive for the BEST.
