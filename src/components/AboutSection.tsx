@@ -33,9 +33,9 @@ const AboutSection = () => {
                 With this vision, we present TWC Learning & Development, founded with a deep passion for people development. 
                 We empower individuals with the skills they need to enhance career performance, build meaningful life, lead effectively, and grow mindfully.
               </p>
-              {/* <p className="text-[#f4d35e] font-semibold italic">
-                Because the right skills don't just transform careers—they transform lives.
-              </p> */}
+              <p className="text-[#f4d35e] font-semibold italic">
+              The right skills don't just transform careers—they transform lives.
+              </p>
               <p className="text-[#f4d35e] font-semibold">
                 At TWC, better is never enough. We strive for the BEST.
               </p>
