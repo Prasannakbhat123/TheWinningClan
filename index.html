@@ -26,7 +26,9 @@
     <meta property="og:url" content="https://thewinningclan.com/" />
     <meta property="og:title" content="The Winning Clan - Equipping Individuals to Excel | Life Skills Training & Development" />
     <meta property="og:description" content="Empower yourself with essential life skills. The Winning Clan offers professional development, corporate training, and personal growth programs to help you excel in your career and life." />
-    <meta property="og:image" content="/twc-logo.png" />
+    <meta property="og:image" content="https://thewinningclan.com/twc-logo.png" />
+    <meta property="og:image:secure_url" content="https://thewinningclan.com/twc-logo.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="The Winning Clan" />
@@ -37,7 +39,10 @@
     <meta name="twitter:url" content="https://thewinningclan.com/" />
     <meta name="twitter:title" content="The Winning Clan - Equipping Individuals to Excel" />
     <meta name="twitter:description" content="Empower yourself with essential life skills. Professional development, corporate training, and personal growth programs." />
-    <meta name="twitter:image" content="/twc-logo.png" />
+    <meta name="twitter:image" content="https://thewinningclan.com/twc-logo.png" />
+    
+    <!-- Google Search Console / Knowledge Graph -->
+    <meta itemprop="image" content="https://thewinningclan.com/twc-logo.png" />
     
     <!-- Additional SEO -->
     <meta name="theme-color" content="#081833" />
@@ -52,13 +57,21 @@
       "name": "The Winning Clan",
       "alternateName": "TWC",
       "url": "https://thewinningclan.com",
-      "logo": "https://thewinningclan.com/twc-logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thewinningclan.com/twc-logo.png",
+        "contentUrl": "https://thewinningclan.com/twc-logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://thewinningclan.com/twc-logo.png",
       "description": "The Winning Clan provides comprehensive life skills training, professional development, and corporate training programs to empower individuals, students, and organizations.",
       "slogan": "Equipping Individuals to Excel",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-8310448805",
-        "contactType": "Customer Service"
+        "contactType": "Customer Service",
+        "email": "thewinningclan11@gmail.com"
       },
       "sameAs": [],
       "areaServed": {
@@ -103,9 +116,29 @@
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "The Winning Clan",
+      "alternateName": "TWC",
       "description": "Learning & Development organization providing life skills training and professional development programs.",
       "url": "https://thewinningclan.com",
-      "telephone": "+91-8310448805"
+      "logo": "https://thewinningclan.com/twc-logo.png",
+      "image": "https://thewinningclan.com/twc-logo.png",
+      "telephone": "+91-8310448805",
+      "email": "thewinningclan11@gmail.com"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Winning Clan",
+      "alternateName": "TWC",
+      "url": "https://thewinningclan.com",
+      "logo": "https://thewinningclan.com/twc-logo.png",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://thewinningclan.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
   </head>
