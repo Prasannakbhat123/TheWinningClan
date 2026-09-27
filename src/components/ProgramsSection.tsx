@@ -11,7 +11,7 @@ const programs = [
       'Overcome the fear of speaking',
       'Become bold to face your challenges',
       'Learn to manage yourself and others',
-      'Make your presence visible',
+      'Make your presence visible with Image consulting',
     ],
     cta: 'Rise above your limitations. Experience a transformation that begins from the inside out. Contact us to know more!!',
   },
