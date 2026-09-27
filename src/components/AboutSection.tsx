@@ -1,3 +1,5 @@
+import profileImage from '../assets/profile.jpeg'
+
 const AboutSection = () => {
   return (
     <section id="about" className="relative w-full py-20 overflow-hidden bg-[#fefbf3]">
@@ -11,8 +13,50 @@ const AboutSection = () => {
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#081833] opacity-[0.025] rounded-full blur-3xl" />
 
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10">
+        {/* Founder section */}
+        <div
+          className="mb-14 overflow-hidden rounded-3xl border border-[#081833]/30 bg-[linear-gradient(135deg,rgba(8,24,51,0.95),rgba(4,11,26,0.95))] p-4 shadow-[0_20px_45px_rgba(0,0,0,0.35)] sm:p-5 md:p-6"
+          data-aos="fade-up"
+        >
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-6">
+            <div className="w-full shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-[#050f24] shadow-[0_12px_28px_rgba(0,0,0,0.35)] md:w-[38%] lg:w-[320px]">
+              <img
+                src={profileImage}
+                alt="Meghana – Founder, The Winning Clan"
+                className="block h-auto w-full"
+              />
+            </div>
+            <div className="flex flex-1 flex-col justify-center gap-4 px-1 py-2 text-white/90 sm:px-2 md:px-4 md:py-4">
+              <div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold leading-tight">
+                  Meghana
+                </h2>
+                <p className="mt-1 text-sm sm:text-base text-[#f4d35e] font-medium">
+                  Founder, TWC · Internationally Certified Image Consultant
+                </p>
+              </div>
+              <p>
+                An Electrical Engineer by education, with 7 years of work experience in dynamic,
+                people-centric roles.
+              </p>
+              <p>
+                She has always been deeply passionate about people development which led her career
+                towards a purpose-driven profession focused on empowering individuals. She firmly
+                believes that every individual is created with the potential to make an impact. Fear,
+                self-doubt, and a lack of confidence should never become barriers that prevent anyone
+                from embracing opportunities.
+              </p>
+              <p>
+                At the same time, she believes that every individual should be equipped to develop a
+                winning mindset, express themselves effectively, and make their presence known. This
+                belief led to the inception of TWC.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-12 text-center" data-aos="fade-up">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#8b7355] font-bold mb-8">About Us</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#8b7355] font-bold mb-8">About TWC</h2>
         </div>
 
         <div className="grid gap-8">
